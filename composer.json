@@ -1,0 +1,37 @@
+{
+    "name": "haiau009/kkphim-core",
+    "description": "KKPHIM Pro",
+    "type": "library",
+    "authors": [
+        {
+            "name": "haiau009",
+            "email": "admin@kkphim.com"
+        }
+    ],
+    "require": {
+        "laravel/framework": "^6|^7|^8",
+        "ckfinder/ckfinder-laravel-package": "v3.5.2.1",
+        "haiau009/laravel-caching-model": "^1.0.0",
+        "haiau009/crud": "^1.0.0",
+        "haiau009/settings": "^1.0.0",
+        "haiau009/permissionmanager": "^1.0.0",
+        "spatie/laravel-sitemap": "^5.8",
+        "artesaos/seotools": "^v0.22.1"
+    },
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "KKPhim\\Core\\": "src/",
+            "KKPhim\\Core\\Database\\Factories\\": "database/factories/",
+            "KKPhim\\Core\\Database\\Seeders\\": "database/seeders/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "KKPhim\\Core\\KKPhimServiceProvider"
+            ]
+        }
+    },
+    "minimum-stability": "stable"
+}
