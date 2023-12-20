@@ -175,6 +175,7 @@ class MovieCrudController extends CrudController
             'publish_year' => 'publish_year',
             'status' => 'status',
             'movie_type' => 'type',
+			'language' => 'language',
             'episode_current' => 'episode_current',
             'label' => 'Thông tin',
             'type' => 'view',
