@@ -5,6 +5,7 @@ $publish_year = data_get($entry, $column['publish_year']);
 $episode_current = data_get($entry, $column['episode_current']);
 $status = data_get($entry, $column['status']);
 $movie_type = data_get($entry, $column['movie_type']);
+$language = data_get($entry, $column['language']);
 $config_show_type = [
     'single' => [
         'class' => 'bg-secondary',
@@ -29,12 +30,26 @@ $config_show_status = [
         'label' => 'Hoàn thành',
     ],
 ];
+
+$bg = '';
+if($language == 'Vietsub') {
+	$bg = 'bg-warning';
+}
+else if($language == 'Thuyết Minh') {
+	$bg = 'bg-danger';
+}
+else if($language == 'Lồng Tiếng') {
+	$bg = 'bg-success';
+}
+
 @endphp
+
 <div class="">
     @includeWhen(!empty($column['wrapper']), 'crud::columns.inc.wrapper_start')
     <div class="text-primary pb-2">{{ $name }} <span class="text-success">[{{ $publish_year }}]</span></div>
     <div class="text-muted pb-2"><small>({{ $origin_name }}) <span class="text-danger">[{{ $episode_current }}]</span></small></div>
     <div class="badge {{ $config_show_type[$movie_type]['class'] }} font-weight-normal">{{ $config_show_type[$movie_type]['label'] }}</div>
     <div class="badge {{ $config_show_status[$status]['class'] }} font-weight-normal">{{ $config_show_status[$status]['label'] }}</div>
+	<div class="badge {{ $bg }} font-weight-normal">{{ $language }}</div>
     @includeWhen(!empty($column['wrapper']), 'crud::columns.inc.wrapper_end')
 </div>
